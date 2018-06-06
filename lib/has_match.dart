@@ -2,5 +2,7 @@ import 'dart:io';
 
 import 'package:glob/glob.dart';
 
-bool hasMatch(File file, Iterable<Glob> globs) =>
-    globs.takeWhile((Glob glob) => glob.matches(file.path)).length > 0;
+bool hasMatch(File file, Iterable<String> patterns) =>
+    patterns
+        .where((String pattern) => new Glob(pattern).matches(file.path))
+        .length > 0;

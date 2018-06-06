@@ -6,10 +6,10 @@ import 'package:refactoring/refactoring.dart' as refactoring;
 
 main(List<String> arguments) async {
 
-  print(new Glob('lib/**.dart').matches('lib/test/test.dart'));
+  print(new Glob('lib/**/test.dart').matches('web/test/test.dart'));
 
-  final a = new refactoring.DirecoryReader();
-  print(a.read());
+  // final a = new refactoring.DirecoryReader();
+  // print(a.read());
 
   final steps = <refactoring.RefactoringStep>[];
   final config = new refactoring.RefactoringConfig(steps);
